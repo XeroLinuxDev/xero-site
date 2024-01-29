@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.17.0/dist/core.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XL-APiT</title>
@@ -18,9 +18,9 @@
 
         body::before {
             content: '';
-            background: url('background-image.jpg') no-repeat center center fixed;
+            background: url('background-image.webp') no-repeat center center fixed;
             background-size: cover;
-            filter: blur(5px);
+            filter: blur(0px);
             position: absolute;
             top: 0;
             left: 0;
@@ -30,17 +30,17 @@
         }
 
         header {
-            padding: 20px;
+            padding: 24px;
             text-align: center;
-            background-color: rgba(184, 175, 198, 0.3);
+            background-color: rgba(72, 72, 76, 0.2);
+            box-shadow: 0 5px 15px rgba(45, 45, 158, 0.4);
         }
-
 
         .button-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 5px;
         }
 
         .button {
@@ -48,7 +48,7 @@
             align-items: center;
             margin: 0 10px;
             padding: 10px 20px;
-            background-color: #333399   ;
+            background-color: #5f5fd8;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -56,16 +56,18 @@
             cursor: pointer;
             text-decoration: none;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(45, 45, 158, 0.3);
         }
 
         .button:hover {
-            background-color: #2980b9;
+            background-color: #3939ba;
             transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(36, 117, 182, 0.5);
         }
 
         .button img {
             max-width: 20px;
-            margin-right: 5px;
+            margin-right: 8px;
         }
 
         .main-content {
@@ -89,6 +91,7 @@
 
         .command-section {
             margin-top: 50px;
+            position: relative;
         }
 
         .command {
@@ -99,17 +102,12 @@
             background-color: rgba(22, 9, 43, 0.1);
             font-family: 'Courier New', monospace;
             color: #fff;
-        }
-
-        .copy-button {
-            margin-left: 10px;
-            padding: 10px 20px;
-            background-color: #333399;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .command:hover {
+            background-color: rgba(22, 9, 43, 0.3);
         }
 
         .site-title {
@@ -126,7 +124,7 @@
 
         .site-title:hover {
             color: #eae3ed;
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         .logo {
@@ -140,9 +138,20 @@
             transform: scale(1.1);
         }
 
-        .copy-button:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
+        .copy-message {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            color: #fff;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .command-section:hover .copy-message {
+            opacity: 1;
         }
 
         @media only screen and (max-width: 600px) {
@@ -152,11 +161,83 @@
             }
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency */
+            backdrop-filter: blur(10px); /* Adjust the blur effect */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            max-width: 80%;
+            height: 50%;
+            text-align: center;
+        }
+
+        .modal img {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 50px;
+            border-radius: 100px;
+        }
+
+        .close {
+            position: absolute;
+            top: 14%;
+            right: 24%;
+            font-size: 50px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .rice-button {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #5f5fd8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(45, 45, 158, 0.3);
+        }
+
+        .rice-button:hover {
+            background-color: #3939ba;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(36, 117, 182, 0.5);
+        }
+
+        .rice-button img {
+            max-width: 20px;
+            margin-right: 8px;
+        }
+
     </style>
 </head>
 <body>
 
     <header>
+        <a href="#" class="site-title">
+            <img src="logo.png" alt="Logo" class="logo"> XL-APiT
+        </a>
         <div class="button-container">
             <a href="https://www.youtube.com" class="button" target="_blank"><img src="youtube-icon.png" alt="YouTube"> YouTube</a>
             <a href="https://mastodon.social" class="button" target="_blank"><img src="mastodon-icon.png" alt="Mastodon"> Mastodon</a>
@@ -166,31 +247,72 @@
     </header>
 
     <div class="main-content">
-        <a href="#" class="site-title">
-            <img src="logo.png" alt="Logo" class="logo"> XL-APiT
-        </a>
-
-        <p class="big-text">Hello</p>
+        <p class="big-text" id="typewriter"></p>
         <p class="medium-text">Hello</p>
-        <p class="normal-text">Hello</p>
 
         <div class="command-section">
             <div class="command" id="commandText">curl -fsSL https://get.xerolinux.xyz/ | sudo bash</div>
-            <button class="copy-button" onclick="copyCommand()">Copy</button>
-            <div id="copyMessage"></div>
+            <div class="copy-message" id="copyMessage">Click to copy!</div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="rice-button" onclick="openModal()">Rices</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Rises Menu</h2>
+            <img src="image1.jpg" alt="Image 1">
+            <p>Text for Image 1</p>
+            <img src="image2.jpg" alt="Image 2">
+            <p>Text for Image 2</p>
+            <img src="image3.jpg" alt="Image 3">
         </div>
     </div>
 
     <script>
+        // Initialize Typewriter on the "Hello" line
+        var app = document.getElementById('typewriter');
+
+        var typewriter = new Typewriter(app, {
+            loop: false, // Set to true if you want the typing animation to loop
+            delay: 75,   // Adjust the typing speed
+            deleteSpeed: 50, // Adjust the speed of deleting characters
+        });
+
+        typewriter.typeString('The Tool You Been Looking For...')
+            .start();
+
+        // Add click event to the command for copying and showing the message
+        var command = document.getElementById("commandText");
+        var copyMessage = document.getElementById("copyMessage");
+
+        command.addEventListener("click", function () {
+            copyCommand();
+        });
+
         function copyCommand() {
-            var commandText = document.getElementById("commandText");
-            var copyText = document.createElement("textarea");
-            copyText.value = commandText.innerText;
-            document.body.appendChild(copyText);
-            copyText.select();
-            document.execCommand("copy");
-            document.body.removeChild(copyText);
-            document.getElementById("copyMessage").innerText = "Command copied!";
+            var commandText = command.innerText;
+            navigator.clipboard.writeText(commandText).then(function () {
+                copyMessage.innerText = "Command copied!";
+                setTimeout(function () {
+                    copyMessage.innerText = "Click to copy!";
+                }, 3000);
+            }).catch(function (err) {
+                console.error('Unable to copy command', err);
+            });
+        }
+        // Open the modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
         }
     </script>
 
