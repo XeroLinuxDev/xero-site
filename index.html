@@ -239,19 +239,19 @@
             <img src="logo.png" alt="Logo" class="logo"> XL-APiT
         </a>
         <div class="button-container">
-            <a href="https://www.youtube.com" class="button" target="_blank"><img src="youtube-icon.png" alt="YouTube"> YouTube</a>
-            <a href="https://mastodon.social" class="button" target="_blank"><img src="mastodon-icon.png" alt="Mastodon"> Mastodon</a>
-            <a href="https://your-forum-url.com" class="button" target="_blank"><img src="forum-icon.png" alt="Forum"> Forum</a>
-            <a href="https://github.com/your-username/your-repo" class="button" target="_blank"><img src="github-icon.png" alt="GitHub"> GitHub</a>
+            <a href="https://youtube.com/@XeroLinux" class="button" target="_blank"><img src="youtube-icon.png" alt="YouTube"> YouTube</a>
+            <a href="https://fosstodon.org/@XeroLinux" class="button" target="_blank"><img src="mastodon-icon.png" alt="Mastodon"> Mastodon</a>
+            <a href="https://forum.xerolinux.xyz" class="button" target="_blank"><img src="forum-icon.png" alt="Forum"> Forum</a>
+            <a href="https://github.com/XeroLinux" class="button" target="_blank"><img src="github-icon.png" alt="GitHub"> GitHub</a>
         </div>
     </header>
 
     <div class="main-content">
         <p class="big-text" id="typewriter"></p>
-        <p class="medium-text">Hello</p>
+        <p class="small-text">A CLI-Toolkit That Will Make Setting Up Arch A Breeze.<br />Just copy the command below, paste it in Terminal and watch it go !</p>
 
         <div class="command-section">
-            <div class="command" id="commandText">curl -fsSL https://get.xerolinux.xyz/ | sudo bash</div>
+            <div class="command" id="commandText">bash -c "$(curl -fsSL https://get.xerolinux.xyz/)"</div>
             <div class="copy-message" id="copyMessage">Click to copy!</div>
         </div>
     </div>
@@ -283,7 +283,7 @@
             deleteSpeed: 50, // Adjust the speed of deleting characters
         });
 
-        typewriter.typeString('The Tool You Been Looking For...')
+        typewriter.typeString('The Ultimate ArchLinux<br />Swiss-Army Knife !!!')
             .start();
 
         // Add click event to the command for copying and showing the message
